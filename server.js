@@ -8,7 +8,8 @@ const child_process = require("child_process");
 
 // ================== SumatraPDF Setup ==================
 const BIN_NAME = "SumatraPDF.exe";
-const BIN_SOURCE = path.join(path.dirname(process.execPath), "bin", BIN_NAME); // <== works in pkg
+// Works in both pkg (VFS) and dev
+const BIN_SOURCE = path.join(__dirname, "bin", BIN_NAME);
 const BIN_DEST = path.join(os.tmpdir(), BIN_NAME);
 
 // Extract from pkg virtual fs → real fs
